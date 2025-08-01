@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-// --- Helper Components for Icons ---
-// Using inline SVGs for icons to keep it all in one file.
+// ---   for Icons ---
+//  SVGs for icons 
 const UserIcon = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
@@ -27,7 +27,7 @@ const TrophyIcon = ({ className }) => (
 );
 
 
-// --- Mock Backend API ---
+// ---   backend API ---
 // This simulates a backend API call to fetch intern data.
 const fetchInternData = async () => {
     console.log("Fetching intern data from mock backend...");
@@ -43,7 +43,7 @@ const fetchInternData = async () => {
     return mockData;
 };
 
-// --- Mock Leaderboard Data ---
+// --- mock leaderboard data ---
 const fetchLeaderboardData = async () => {
     console.log("Fetching leaderboard data...");
     await new Promise(resolve => setTimeout(resolve, 500));
@@ -59,9 +59,9 @@ const fetchLeaderboardData = async () => {
     return mockLeaderboard;
 }
 
-// --- Components ---
+// --- components ---
 
-// Dashboard Component
+// dashboard component
 const Dashboard = ({ onLogout, onShowLeaderboard }) => {
     const [internData, setInternData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -149,7 +149,7 @@ const Dashboard = ({ onLogout, onShowLeaderboard }) => {
     );
 };
 
-// Leaderboard Component (Bonus)
+// leaderboard component(bonus)
 const Leaderboard = ({ onBack }) => {
     const [leaders, setLeaders] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -202,7 +202,7 @@ const Leaderboard = ({ onBack }) => {
 }
 
 
-// AuthForm Component (for Login/Signup)
+// authFoerm component (for Login/Signup)
 const AuthForm = ({ isLogin, onAuth, onToggle }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -265,12 +265,12 @@ const AuthForm = ({ isLogin, onAuth, onToggle }) => {
     );
 };
 
-// Main App Component
+// Main App 
 export default function App() {
     // This state determines what the user sees: 'login', 'signup', 'dashboard', or 'leaderboard'
     const [page, setPage] = useState('login'); 
 
-    // Since auth is not needed, this is a dummy function.
+    //    this is a dummy function auth not needed
     const handleAuth = () => {
         console.log("Authentication successful (dummy). Redirecting to dashboard.");
         setPage('dashboard');
